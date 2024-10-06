@@ -1482,13 +1482,17 @@ border-radius: 0px;
 </div>
 
 
+<p><strong>演習では，他人のデバイスに触らない．自分のデバイスを，他人に触らせない．</strong></p>
+<p><strong>新しいノートブックは作らない．</strong>前回（宿題で）作業したノートブックは，Google
+Driveの「マイドライブ/Colab
+Notebooks」に保存されているはず．それを開いて再開する．</p>
 <p>結果を提示しているのは，計算が正しいことを確認してもらうためである．結果の形式を完全に同じにする必要はない．</p>
 <div id="ベクトル教科書3.3.2項" class="section level2" number="1">
 <h2><span class="header-section-number">1</span>
 ベクトル（教科書3.3.2項）</h2>
 <p><strong>課題</strong> <span class="math inline">\(\boldsymbol
 x=(x_1,\dots,x_n)=(57, 39, 59, 59, 48, 38)\)</span>
-とする．これを次のデータ構造で表し，それぞれの要素数を求めよ。</p>
+とする．これを次のデータ構造で表し，それぞれの要素数を求めよ．</p>
 <ul>
 <li>アレイ<code>a</code></li>
 <li>シリーズ<code>s</code></li>
@@ -1497,7 +1501,7 @@ x=(x_1,\dots,x_n)=(57, 39, 59, 59, 48, 38)\)</span>
 <pre><code>## 6</code></pre>
 <p><strong>課題</strong> <span class="math inline">\(\boldsymbol
 x\)</span> の各成分に <span class="math inline">\(10\)</span>
-を足した結果を求めよ。</p>
+を足した結果を求めよ．</p>
 <pre><code>## [67 49 69 69 58 48]</code></pre>
 <pre><code>## 0    67
 ## 1    49
@@ -1507,7 +1511,7 @@ x\)</span> の各成分に <span class="math inline">\(10\)</span>
 ## 5    48
 ## dtype: int64</code></pre>
 <p><strong>課題</strong> <span class="math inline">\(10\boldsymbol
-x\)</span> を求めよ。</p>
+x\)</span> を求めよ．</p>
 <pre><code>## [570 390 590 590 480 380]</code></pre>
 <pre><code>## 0    570
 ## 1    390
@@ -1517,8 +1521,8 @@ x\)</span> を求めよ。</p>
 ## 5    380
 ## dtype: int64</code></pre>
 <p><strong>課題</strong> <span class="math inline">\(\boldsymbol
-y=(y_1,\dots,y_n)=(1, 2, 3, 4, 5, 6)\)</span> とする。<span class="math inline">\(\boldsymbol x+\boldsymbol y\)</span>
-を求めよ。</p>
+y=(y_1,\dots,y_n)=(1, 2, 3, 4, 5, 6)\)</span> とする．<span class="math inline">\(\boldsymbol x+\boldsymbol y\)</span>
+を求めよ．</p>
 <pre><code>## [58 41 62 63 53 44]</code></pre>
 <pre><code>## 0    58
 ## 1    41
@@ -1534,9 +1538,11 @@ y=(y_1,\dots,y_n)=(1, 2, 3, 4, 5, 6)\)</span> とする。<span class="math inli
 x\cdot\boldsymbol y=\displaystyle\sum_{i=1}^nx_iy_i\)</span>
 を求めよ．</p>
 <pre><code>## 1016</code></pre>
+<p><strong>課題</strong> <span class="math inline">\((x_1^2,\dots,x_n^2)\)</span> を求めよ．</p>
+<pre><code>## [3249 1521 3481 3481 2304 1444]</code></pre>
 <p><strong>課題</strong> <span class="math inline">\(|\boldsymbol
 x|=\sqrt{\boldsymbol x\cdot\boldsymbol
-x}=\sqrt{\sum_{i=1}^nx_i^2}\)</span> を求めよ。</p>
+x}=\sqrt{\sum_{i=1}^nx_i^2}\)</span> を求めよ．</p>
 <pre><code>## 124.41864811996632</code></pre>
 </div>
 <div id="記述統計教科書4.1節" class="section level2" number="2">
@@ -1555,12 +1561,17 @@ x)^2}\)</span> を求めよ．</p>
 x}{\sigma}\)</span> を求めよ．</p>
 <pre><code>## [ 0.71443451 -1.1226828   0.91855865  0.91855865 -0.20412415 -1.22474487]</code></pre>
 <p><strong>課題</strong> <span class="math inline">\(\bar
-z=\displaystyle\frac{1}{n}\sum_{i=1}^nz_i\)</span>を求めよ。</p>
+z=\displaystyle\frac{1}{n}\sum_{i=1}^nz_i\)</span> を求めよ．</p>
 <p><strong>課題</strong> <span class="math inline">\(\displaystyle\sqrt{\frac{1}{n-1}\sum_{i=1}^n(z_i-\bar
 z)^2}\)</span> を求めよ．</p>
-<p><strong>課題</strong> <span class="math inline">\(\boldsymbol
-x\)</span> の偏差値を求めよ．</p>
+<p><strong>課題</strong> <span class="math inline">\(x_1, \dots,
+x_n\)</span> の偏差値 <span class="math inline">\(t_1, \dots,
+t_n\)</span> を求めよ．</p>
 <pre><code>## [57.14434508 38.77317201 59.18558654 59.18558654 47.95875855 37.75255129]</code></pre>
+<p><strong>課題</strong> <span class="math inline">\(\bar
+t=\displaystyle\frac{1}{n}\sum_{i=1}^nt_i\)</span> を求めよ．</p>
+<p><strong>課題</strong> <span class="math inline">\(\displaystyle\sqrt{\frac{1}{n-1}\sum_{i=1}^n(t_i-\bar
+t)^2}\)</span> を求めよ．</p>
 <p>次のデータフレームを<code>df</code>とする．</p>
 <pre><code>##   name  test1  test2 class
 ## 0    A     30     53     a
