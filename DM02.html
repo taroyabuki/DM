@@ -1586,10 +1586,10 @@ t)^2}\)</span> を求めよ．</p>
 <pre><code>## Counter({&#39;a&#39;: 3, &#39;b&#39;: 2})</code></pre>
 <p><strong>課題</strong>
 <code>df</code>について，次のような結果を得よ（数値は平均）．</p>
-<pre><code>##        test1
-## class       
-## a       39.0
-## b       41.5</code></pre>
+<pre><code>## class
+## a    39.0
+## b    41.5
+## Name: test1, dtype: float64</code></pre>
 </div>
 <div id="次元データの非類似度教科書3.5節" class="section level2" number="3">
 <h2><span class="header-section-number">3</span>
@@ -1597,16 +1597,17 @@ t)^2}\)</span> を求めよ．</p>
 <p><code>df.test1</code>を <span class="math inline">\(\boldsymbol
 x=\{x_1,\dots x_n\}\)</span>，<code>df.test2</code>を <span class="math inline">\(\boldsymbol y=\{y_1,\dots,y_n\}\)</span>
 とする．</p>
-<p><strong>課題</strong> <span class="math inline">\(|\boldsymbol
-x-\boldsymbol y|=\sqrt{\sum_{i=1}^n(x_i-y_i)^2}\)</span> を求めよ．</p>
+<p><strong>課題</strong> <span class="math inline">\(\lvert\boldsymbol
+x-\boldsymbol y\rvert=\sqrt{\sum_{i=1}^n(x_i-y_i)^2}\)</span>
+を求めよ．</p>
 <pre><code>## 50.41825066382212</code></pre>
 <p><strong>課題</strong> <span class="math inline">\(r=\dfrac{\sum_{i=1}^n(x_i-\bar x)(y_i-\bar
 y)}{\sqrt{\sum_{i=1}^n(x_i-\bar x)^2}\sqrt{\sum_{i=1}^n(y_i-\bar
 y)^2}}\)</span>を求めよ．</p>
 <pre><code>## 0.6481129146499114</code></pre>
 <p><strong>課題</strong> <span class="math inline">\(\cos\theta=\dfrac{\boldsymbol x\cdot\boldsymbol
-y}{|\boldsymbol x||\boldsymbol
-y|}=\dfrac{\sum_{i=1}^nx_iy_i}{\sqrt{\sum_{i=1}^nx_i^2}\sqrt{
+y}{\lvert\boldsymbol x\rvert\lvert\boldsymbol
+y\rvert}=\dfrac{\sum_{i=1}^nx_iy_i}{\sqrt{\sum_{i=1}^nx_i^2}\sqrt{
 \sum_{i=1}^ny_i^2}}\)</span> を求めよ．</p>
 <pre><code>## 0.9834942116155255</code></pre>
 <p><strong>課題</strong>
