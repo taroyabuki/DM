@@ -1,3 +1,5 @@
 *.Rmd
 *.sh
 .Rhistory
+*_cache/*
+*_files/*
