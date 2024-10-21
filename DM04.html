@@ -1548,7 +1548,7 @@ b):=\displaystyle\sum_{i=1}^n(y_i-(ax_i+b))^2\)</span>
 <p><strong>課題</strong>
 例1のデータについて，scikit-learnを使って，<span class="math inline">\(a, b\)</span> を求めよ。</p>
 <p><strong>課題</strong>
-階級年齢が45のときの，血圧の平均を予測せよ。</p>
+年齢階級が45のときの，血圧の平均を予測せよ。</p>
 <p><strong>課題</strong>
 <code>data1</code>の年齢階級に対応する血圧の平均を予測して，新しいデータフレームにまとめよ。</p>
 <p><strong>課題</strong> データとモデルをまとめて可視化せよ。</p>
@@ -1572,12 +1572,12 @@ b):=\displaystyle\sum_{i=1}^n(y_i-(ax_i+b))^2\)</span>
 <div id="例1-1" class="section level4" number="2.2.1">
 <h4><span class="header-section-number">2.2.1</span> 例1</h4>
 <p><strong>課題</strong>
-例1のデータについて，P値を求め，上記の仮説を検定せよ。</p>
+例1のデータについて，P値を求め，上記の仮説を検定せよ。有意水準は5%とする。</p>
 </div>
 <div id="例2-1" class="section level4" number="2.2.2">
 <h4><span class="header-section-number">2.2.2</span> 例2</h4>
 <p><strong>課題</strong>
-例2のデータについて，P値を求め，上記の仮説を検定せよ。</p>
+例2のデータについて，P値を求め，上記の仮説を検定せよ。有意水準は5%とする。</p>
 </div>
 </div>
 <div id="公式" class="section level3" number="2.3">
@@ -1604,10 +1604,11 @@ b):=\displaystyle\sum_{i=1}^n(y_i-(ax_i+b))^2\)</span> を最小にする
 <p><strong>課題</strong> <span class="math inline">\(L(a, b):=a^2-4
 a+b^2-6 b+18\)</span> を最小にする <span class="math inline">\(a,
 b\)</span> を，数値最適化によって求めよ。ヒント：<span class="math inline">\(L(a, b)=(a - 2)^2 + (b - 3)^2 + 5\)</span>
-である。</p>
+である。<a href="https://www.wolframalpha.com/input?i2d=true&amp;i=a**2+-+4+*+a+%2B+b**2+-+6+*+b+%2B+18">WolframAlphaによる可視化</a></p>
 <pre class="python"><code>def L(v):
   a, b = v
-  return a**2 - 4 * a + b**2 - 6 * b + 18
+  L = a**2 - 4 * a + b**2 - 6 * b + 18
+  return L
 
 minimize(L, (0, 0))</code></pre>
 </div>
