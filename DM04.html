@@ -1483,7 +1483,7 @@ border-radius: 0px;
 
 
 <p><strong>演習では，他人のデバイスに触らない．自分のデバイスを，他人に触らせない．</strong></p>
-<p><strong>新しいノートブックは作らない．</strong>前回（宿題で）作業したノートブックは，Google
+<p><strong>新しいノートブックは作らない．</strong>前回作業したノートブックは，Google
 Driveの「マイドライブ/Colab
 Notebooks」に保存されているはず．それを開いて再開する．</p>
 <p>結果を提示しているのは，計算が正しいことを確認してもらうためである．結果の形式を完全に同じにする必要はない．</p>
@@ -1667,7 +1667,8 @@ b)\)</span> を求めよ。</p>
 </div>
 <div id="線形代数" class="section level3" number="2.6">
 <h3><span class="header-section-number">2.6</span> 線形代数</h3>
-<p>次のようなベクトルと行列を導入する（<span class="math inline">\(X\)</span> を計画行列という）。</p>
+<p>次のようなベクトルと行列を導入する（<span class="math inline">\(X\)</span>
+を計画行列という．入力変数を表す<code>X</code>とは別物である）。</p>
 <p><span class="math display">\[\boldsymbol 1:=\left[\begin{array}{c}
 1 \\
 1 \\
@@ -1750,7 +1751,7 @@ y\)</span> である。<span class="math inline">\(H\)</span>
 <div id="例1-5" class="section level4" number="2.6.1">
 <h4><span class="header-section-number">2.6.1</span> 例1</h4>
 <p><strong>課題</strong> 例1のデータについて，計画行列 <span class="math inline">\(X\)</span> を作れ。</p>
-<pre class="python"><code>X = sm.add_constant(data1[[&#39;年齢階級&#39;]]).values
+<pre class="python"><code>X = sm.add_constant(data1[[&#39;年齢階級&#39;]])
 print(X)</code></pre>
 <p><strong>課題</strong> 例1のデータについて，<span class="math inline">\(\hat{\boldsymbol\beta}:=(X^\top
 X)^{-1}X^\top\boldsymbol y\)</span> を求めよ。</p>
