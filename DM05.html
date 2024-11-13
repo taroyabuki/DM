@@ -1524,24 +1524,17 @@ data2.head()</code></pre>
 <div id="例data3" class="section level4" number="1.2.2">
 <h4><span class="header-section-number">1.2.2</span>
 例：<code>data3</code></h4>
-<p>以下で，<code>data3</code>として用いるデータを用意する。データは<a href="https://www.data.jma.go.jp/cpdinfo/temp/an_wld.html">https://www.data.jma.go.jp/cpdinfo/temp/an_wld.html</a>で公開されている。ここでは，CSVファイルを直接データフレームとして読み込む。</p>
+<p>以下で，<code>data3</code>として用いるデータを用意する。データは<a href="https://www.data.jma.go.jp/cpdinfo/temp/an_wld.html">https://www.data.jma.go.jp/cpdinfo/temp/an_wld.html</a>で公開されている。ここでは，CSVファイルを直接データフレームとして読み込み，「年」と「世界全体」だけを残す．</p>
 <pre class="python"><code>tmp = pd.read_csv(&#39;https://www.data.jma.go.jp/cpdinfo/temp/list/csv/an_wld.csv&#39;, encoding=&#39;Shift_JIS&#39;)
-tmp.head()</code></pre>
+print(tmp.head())</code></pre>
 <pre><code>##       年  世界全体   北半球   南半球
 ## 0  1891 -0.78 -0.88 -0.68
 ## 1  1892 -0.89 -1.00 -0.74
 ## 2  1893 -0.94 -1.06 -0.79
 ## 3  1894 -0.86 -0.93 -0.77
 ## 4  1895 -0.82 -0.95 -0.67</code></pre>
-<p>「年」と「世界全体」だけを使う。</p>
-<pre class="python"><code>data3 = tmp[[&#39;年&#39;, &#39;世界全体&#39;]]
-data3.head()</code></pre>
-<pre><code>##       年  世界全体
-## 0  1891 -0.78
-## 1  1892 -0.89
-## 2  1893 -0.94
-## 3  1894 -0.86
-## 4  1895 -0.82</code></pre>
+<pre class="python"><code>
+data3 = tmp[[&#39;年&#39;, &#39;世界全体&#39;]]</code></pre>
 <p><strong>課題</strong>
 （復習）「年」を入力変数，「世界全体」を出力変数とする。線形回帰分析を行い，回帰係数の推定値を求めよ。世界全体の気温は，100年当たり何℃上昇する傾向にあるか。</p>
 <p><strong>課題</strong>
@@ -1552,7 +1545,7 @@ data3.head()</code></pre>
 <div id="k最近傍法教科書-7.5節" class="section level2" number="2">
 <h2><span class="header-section-number">2</span> K最近傍法（教科書
 7.5節）</h2>
-<p>近傍<span class="math inline">\(K\)</span>個の平均を予測値とする方法。パラメータチューニングをやるまでは，近傍の数は5とする。</p>
+<p>近傍<span class="math inline">\(K\)</span>個の平均を予測値とする方法。パラメータチューニングをやるまでは，近傍の数は5とする（<code>n_neighbors=5</code>は省略可）。</p>
 <div id="data2" class="section level3" number="2.1">
 <h3><span class="header-section-number">2.1</span>
 <code>data2</code></h3>
@@ -1711,6 +1704,8 @@ LOOCVの結果において，帰無仮説「線形回帰分析の予測誤差と
 最良パラメータを採用したモデルの振る舞いを可視化せよ。</p>
 <p><strong>課題</strong> 最良パラメータを採用したモデルの <span class="math inline">\(\displaystyle\sqrt{\mathrm{PRESS}/n}\)</span>
 を求めよ。</p>
+<p><strong>課題</strong>
+（時間に余裕がある場合）生成AIで全てをやり直せ．</p>
 </div>
 </div>
 
