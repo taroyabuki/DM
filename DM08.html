@@ -1502,9 +1502,11 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder, StandardScaler
 from sklearn.tree import DecisionTreeClassifier, export_graphviz
 
+# K分割交差検証
 def score_cv(model, X, y, k=5):
   return cross_val_score(model, X, y, cv=k).mean()
 
+# 一つ抜き交差検証（LOOCV）
 def score_loocv(model, X, y):
   return cross_val_score(model, X, y, cv=LeaveOneOut()).mean()</code></pre>
 <div id="多値分類" class="section level2" number="1">
