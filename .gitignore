@@ -1,6 +1,5 @@
 *.Rmd
 *.sh
-*.png
 .Rhistory
 *_cache/*
 *_files/*
