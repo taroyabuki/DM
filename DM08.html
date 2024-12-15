@@ -1909,6 +1909,7 @@ y</code></pre>
 <pre class="python"><code>model = DecisionTreeClassifier()
 model.fit(X, y)</code></pre>
 <p>入力変数の値には順序があるから，<code>OneHotEncoder</code>より<code>OrdinalEncoder</code>が向いていると思われる。ここでは，両方試してみる。</p>
+<p>補足：goodのインスタンスを誤ってvgoodと予測するのと，unaccのインスタンスを誤ってvgoodと予測するのでは深刻さが異なるのだが，ここでは正解率だけを見ることにする。</p>
 <p><strong>課題</strong>
 <code>OneHotEncoder</code>で質的変数を数値に変換して，決定木を訓練し，5分割交差検証でで予測性能を見積もれ。</p>
 <p><strong>課題</strong>
