@@ -1565,7 +1565,7 @@ result</code></pre>
 <div id="ワンホットエンコーディング教科書5.2.25.2.3項" class="section level4" number="1.1.3">
 <h4><span class="header-section-number">1.1.3</span>
 ワンホットエンコーディング（教科書5.2.2，5.2.3項）</h4>
-<p><code>drop=&#39;first&#39;</code>は冗長性をなくすための，handle_unknown=‘ignore’`は不明な値をエラーにしないためのオプション。</p>
+<p><code>drop=&#39;first&#39;</code>は冗長性をなくすための，<code>handle_unknown=&#39;ignore&#39;</code>は不明な値をエラーにしないためのオプション。補足：オプション<code>drop=&#39;first&#39;</code>は線形回帰分析では付けた方がよいが，他の手法では付けない方がよい結果になることもある（調べてみないとわからない）。</p>
 <pre class="python"><code>f = OneHotEncoder(drop=&#39;first&#39;, handle_unknown=&#39;ignore&#39;)
 result = f.fit_transform(data[[&#39;q&#39;]]).toarray()
 result</code></pre>
