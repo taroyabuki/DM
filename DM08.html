@@ -1487,7 +1487,8 @@ border-radius: 0px;
 Driveの「マイドライブ/Colab
 Notebooks」に保存されているはず．それを開いて再開する．</p>
 <p>結果を提示しているのは，計算が正しいことを確認してもらうためである．結果の形式を完全に同じにする必要はない．</p>
-<pre class="python"><code>import matplotlib.pyplot as plt
+<pre class="python"><code>import graphviz
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm
@@ -1499,7 +1500,7 @@ from sklearn.metrics import ConfusionMatrixDisplay, confusion_matrix
 from sklearn.model_selection import cross_val_score, GridSearchCV, LeaveOneOut
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder, OrdinalEncoder
-from sklearn.tree import DecisionTreeClassifier, plot_tree
+from sklearn.tree import DecisionTreeClassifier, export_graphviz, plot_tree
 from xgboost import XGBClassifier
 
 # K分割交差検証
@@ -1911,9 +1912,9 @@ model.fit(X, y)</code></pre>
 <p>入力変数の値には順序があるから，<code>OneHotEncoder</code>より<code>OrdinalEncoder</code>が向いていると思われる。ここでは，両方試してみる。</p>
 <p>補足：goodのインスタンスを誤ってvgoodと予測するのと，unaccのインスタンスを誤ってvgoodと予測するのでは深刻さが異なるのだが，ここでは正解率だけを見ることにする。</p>
 <p><strong>課題</strong>
-<code>OneHotEncoder</code>で質的変数を数値に変換して，決定木を訓練し，5分割交差検証でで予測性能を見積もれ。</p>
+<code>OneHotEncoder(handle_unknown=&#39;ignore&#39;)</code>で質的変数を数値に変換して，<code>DecisionTreeClassifier(random_state=0)</code>を訓練し，5分割交差検証でで予測性能を見積もれ。</p>
 <p><strong>課題</strong>
-<code>RandomForestClassifier</code>と<code>XGBClassifier</code>の予測性能を見積もれ。</p>
+<code>RandomForestClassifier(random_state=0)</code>と<code>XGBClassifier(random_state=0)</code>の予測性能を見積もれ。</p>
 <p><strong>課題</strong>
 <code>OrdinalEncoder</code>で質的変数を数値に変換して，決定木を訓練し，5分割交差検証でで予測性能を見積もれ。ヒント：<code>OrdinalEncoder</code>の作り方を示す。</p>
 <pre class="python"><code>categories = [
@@ -1925,8 +1926,10 @@ model.fit(X, y)</code></pre>
     [&#39;low&#39;, &#39;med&#39;, &#39;high&#39;]           # safety
 ]
 oe = OrdinalEncoder(categories=categories)</code></pre>
+<p><strong>課題</strong>
+<code>RandomForestClassifier(random_state=0)</code>と<code>XGBClassifier(random_state=0)</code>の予測性能を見積もれ。</p>
 <p>補足：木の最大深さを3にした場合の分類木を描く．</p>
-<pre class="python"><code>y = data4[&#39;class&#39;]
+<pre class="python"><code>y = data4[&#39;class&#39;] # 変数を数値に変換する前に戻す。
 
 pipeline = Pipeline([
     (&#39;oe&#39;, oe),
@@ -1942,8 +1945,6 @@ plot_tree(decision_tree=model,
           filled=True)
 plt.tight_layout()
 plt.show()</code></pre>
-<p><strong>課題</strong>
-<code>RandomForestClassifier</code>と<code>XGBClassifier</code>の予測性能を見積もれ。</p>
 <p><strong>課題</strong>
 （時間に余裕がある場合）生成AIで全てをやり直せ．</p>
 </div>
