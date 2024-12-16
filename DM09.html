@@ -1487,7 +1487,8 @@ border-radius: 0px;
 Driveの「マイドライブ/Colab
 Notebooks」に保存されているはず．それを開いて再開する．</p>
 <p>結果を提示しているのは，計算が正しいことを確認してもらうためである．結果の形式を完全に同じにする必要はない．</p>
-<pre class="python"><code>import matplotlib.pyplot as plt
+<pre class="python"><code>import graphviz
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from sklearn.compose import ColumnTransformer
@@ -1497,7 +1498,7 @@ from sklearn.metrics import *
 from sklearn.model_selection import cross_val_score, train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder
-from sklearn.tree import DecisionTreeClassifier, plot_tree
+from sklearn.tree import DecisionTreeClassifier, export_graphviz, plot_tree
 from xgboost import XGBClassifier</code></pre>
 <div id="値分類教科書第10章" class="section level2" number="1">
 <h2><span class="header-section-number">1</span>
@@ -1545,7 +1546,7 @@ data1.head()</code></pre>
 <p>因みに，学習済みの決定木は，次のように可視化できる。</p>
 <pre class="python"><code>pipeline.fit(X, y);
 
-ohe = pipeline.named_steps[&#39;ohn&#39;]
+ohe = pipeline.named_steps[&#39;ohe&#39;]
 model = pipeline.named_steps[&#39;tree&#39;]
 
 plot_tree(decision_tree=model,
